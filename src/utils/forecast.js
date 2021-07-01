@@ -13,11 +13,12 @@ const forecast = (latitude, longitude, callback) => {
             callback("Unable to retrieve weather data."), undefined;   
         } else {
             const current = body.current;
-            const {temperature, feelslike} = current;
+            const {temperature, feelslike, humidity} = current;
             callback(undefined, {
                 weather_description: current.weather_descriptions[0],
                 temperature,
-                feelslike
+                feelslike,
+                humidity
             })
         }
     })
