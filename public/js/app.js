@@ -5,7 +5,7 @@ const messageTwo = document.querySelector('#message-2');
 
 const getForecast = (address) => {
     let promise = new Promise((resolve, reject) => {
-        var url = "http://localhost:3000/weather?address=" + address;
+        var url = "/weather?address=" + address;
         fetch(url).then((response) => {
             response.json().then((data) => {
                 if(data.error){
